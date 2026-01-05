@@ -269,65 +269,10 @@
             </div>
         </div>
     </div>
-    quit() {
-    this.active = false;
-    this.paused = false;
-    this.over = false;
-
-    document.getElementById('overlay-pause').classList.add('hidden');
-    document.getElementById('overlay-over').classList.add('hidden');
-
-    Audio.updateAmbience(0);
-    this.router('menu');
-}
-
+    
     <script>
         /** * CONSTANTS & DATA
          */
-      const I18N = {
-    ru: {
-        play: "Играть",
-        records: "Рекорды",
-        settings: "Настройки",
-        back: "Назад",
-        select_mode: "ВЫБОР РЕЖИМА",
-        classic_desc: "Рост скорости, бесконечный режим.",
-        blitz_desc: "Атака на счёт. 2 минуты.",
-        score: "Счёт",
-        level: "Уровень",
-        lines: "Линии",
-        next: "Далее",
-        hold: "Удержание",
-        pause: "ПАУЗА",
-        resume: "ПРОДОЛЖИТЬ",
-        quit: "Выйти",
-        game_over: "ИГРА ОКОНЧЕНА",
-        try_again: "ПОВТОРИТЬ",
-        main_menu: "Главное меню",
-        language: "Язык"
-    },
-    en: {
-        play: "Play",
-        records: "Records",
-        settings: "Settings",
-        back: "Back",
-        select_mode: "SELECT MODE",
-        classic_desc: "Increasing speed, endless mode.",
-        blitz_desc: "Score attack. 2 minutes.",
-        score: "Score",
-        level: "Level",
-        lines: "Lines",
-        next: "Next",
-        hold: "Hold",
-        pause: "PAUSE",
-        resume: "RESUME",
-        quit: "Quit",
-        game_over: "GAME OVER",
-        try_again: "TRY AGAIN",
-        main_menu: "Main Menu",
-        language: "Language"
-    }
-};
         const COLS = 10;
         const ROWS = 20;
         const BLOCK_SIZE = 30;
@@ -337,11 +282,6 @@
             S: '#00ff00', Z: '#ff0055', J: '#0055ff', L: '#ffaa00',
             G: 'rgba(255,255,255,0.15)'
         };
-let currentLang = localStorage.getItem('tetris_lang') || 'ru';
-function t(key) {
-    return I18N[currentLang][key] || key;
-}
-<button data-i18n="play"></button>
 
         const TETROMINOS = {
             I: [[0,0,0,0],[1,1,1,1],[0,0,0,0],[0,0,0,0]],
